@@ -28,6 +28,8 @@ public class PagerAdapter  extends FragmentPagerAdapter {
                 return new TechFrag();
             case 4:
                 return new HealthFrag();
+            case 5:
+                return new BusinessFrag();
             default:
                 return null;
         }
