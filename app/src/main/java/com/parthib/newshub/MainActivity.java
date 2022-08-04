@@ -12,7 +12,7 @@ import com.google.android.material.tabs.TabLayout;
 public class MainActivity extends AppCompatActivity {
 
     TabLayout tablayout;
-    TabItem mhome,mhealth,msports,mtech,mscience;
+    TabItem mhome,mhealth,msports,mtech,mscience,mbusiness;
     PagerAdapter pagerAdapter;
     Toolbar mtoolbar;
 
@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         mscience=findViewById(R.id.science);
         msports=findViewById(R.id.sports);
         mtech=findViewById(R.id.technology);
+        mbusiness=findViewById(R.id.business);
 
         ViewPager viewPager=findViewById(R.id.fragmentcontainer);
         tablayout = findViewById(R.id.include);
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
-                if(tab.getPosition()==0  || tab.getPosition()==1 || tab.getPosition()==2 || tab.getPosition()==3 || tab.getPosition()==4){
+                if(tab.getPosition()==0  || tab.getPosition()==1 || tab.getPosition()==2 || tab.getPosition()==3 || tab.getPosition()==4 || tab.getPosition()==5){
                     pagerAdapter.notifyDataSetChanged();
                 }
             }
@@ -56,8 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-        viewPager.addOnAdapterChangeListener((ViewPager.OnAdapterChangeListener) new TabLayout.TabLayoutOnPageChangeListener(tablayout));
+    viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tablayout));
 
     }
 }
